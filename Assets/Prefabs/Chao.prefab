@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7436861770656037520}
   - component: {fileID: 6748682152733792527}
   m_Layer: 3
-  m_Name: Chao_contorno
+  m_Name: chao_contorno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 4425636285777468160}
   - component: {fileID: 1784784357342932994}
   m_Layer: 3
-  m_Name: Chao_grama
+  m_Name: chao_grama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.039821967, g: 0.4490565, b: 0.11026926, a: 1}
+  m_Color: {r: 0, g: 0.735849, b: 0.12614559, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 8366862567475760441}
   - component: {fileID: 7225550332759227129}
   m_Layer: 3
-  m_Name: Chao_terra
+  m_Name: chao_terra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3509434, g: 0.2869612, b: 0, a: 1}
+  m_Color: {r: 0.5283019, g: 0.4333263, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 762212260031676631}
   m_Layer: 3
-  m_Name: Chao
+  m_Name: chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

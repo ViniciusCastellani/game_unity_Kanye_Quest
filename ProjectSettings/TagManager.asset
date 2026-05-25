@@ -10,8 +10,8 @@ TagManager:
   - chao
   - coletavel
   - inimigo
-  - Zona_de_morte
   - zonaDeMorte
+  - fimDeFase
   layers:
   - Default
   - TransparentFX

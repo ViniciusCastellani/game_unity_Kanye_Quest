@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 2141745956623894440}
   - component: {fileID: 2071581533185155517}
   m_Layer: 0
-  m_Name: Coletavel
+  m_Name: coletavel
   m_TagString: coletavel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

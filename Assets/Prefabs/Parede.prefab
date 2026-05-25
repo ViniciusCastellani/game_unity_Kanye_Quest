@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128239561025295707}
   m_Layer: 0
-  m_Name: Parede
+  m_Name: parede
   m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
