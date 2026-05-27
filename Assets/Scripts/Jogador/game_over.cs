@@ -7,14 +7,29 @@ public class game_over : MonoBehaviour
     public string cenaMenuInicial;
     private AudioSource fonteDeAudio;
     public AudioClip somDoGameOver;
+
+    // --- NOVAS VARIÁVEIS ---
+    // Arraste os GameObjects do texto para cá no Inspetor do Unity
+    public GameObject contador_fps_txt;
+    public GameObject pontos_txt;
+    // ------------------------
+
     void Start()
     {
         fonteDeAudio = GetComponent<AudioSource>();
     }
+
     public void FimDeJogo()
     {
         // liga a tela de Game Over
         telaGameOver.SetActive(true);
+       
+        if (contador_fps_txt != null) 
+            contador_fps_txt.SetActive(false);
+
+        if (pontos_txt != null) 
+            pontos_txt.SetActive(false);
+
         // Congela o tempo
         Time.timeScale = 0f;
         // Para a musica de fundo
@@ -29,12 +44,14 @@ public class game_over : MonoBehaviour
                              // Recarrega a cena atual reiniciando o jogo
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
     public void Desistir()
     {
         Time.timeScale = 1f; // Restaura o tempo
                              // Carrega a cena do Menu Inicial
         SceneManager.LoadScene(cenaMenuInicial);
     }
+
     private void OnCollisionEnter2D(Collision2D objetoColidido)
     {
         if (objetoColidido.gameObject.CompareTag("inimigo"))
@@ -42,6 +59,7 @@ public class game_over : MonoBehaviour
             FimDeJogo();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D objetoColidido)
     {
         if (objetoColidido.CompareTag("zonaDeMorte"))
