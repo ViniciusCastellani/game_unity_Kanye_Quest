@@ -8,19 +8,25 @@ public class game_over : MonoBehaviour
     private AudioSource fonteDeAudio;
     public AudioClip somDoGameOver;
 
-    // --- NOVAS VARIÁVEIS ---
-    // Arraste os GameObjects do texto para cá no Inspetor do Unity
     public GameObject contador_fps_txt;
     public GameObject pontos_txt;
-    // ------------------------
+    public GameObject mensagem_aviso_pontos;
+
+    public passar_de_fase scriptPassarFase;
 
     void Start()
     {
         fonteDeAudio = GetComponent<AudioSource>();
+
+        if (scriptPassarFase == null)
+            scriptPassarFase = FindObjectOfType<passar_de_fase>();
     }
 
     public void FimDeJogo()
     {
+        if (scriptPassarFase != null)
+            scriptPassarFase.EsconderMensagemImediatamente();
+
         // liga a tela de Game Over
         telaGameOver.SetActive(true);
        
@@ -29,6 +35,9 @@ public class game_over : MonoBehaviour
 
         if (pontos_txt != null) 
             pontos_txt.SetActive(false);
+
+        if (mensagem_aviso_pontos != null)
+            mensagem_aviso_pontos.SetActive(false);
 
         // Congela o tempo
         Time.timeScale = 0f;

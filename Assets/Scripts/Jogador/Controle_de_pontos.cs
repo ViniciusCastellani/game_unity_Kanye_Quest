@@ -4,6 +4,7 @@ using UnityEngine;
 public class ControleDePontos : MonoBehaviour
 {
     public int pontos;
+    public int qtd_total_pontos;
     public TextMeshProUGUI pontosTexto;
     private AudioSource fonteDeAudio;
     public AudioClip somDosColetaveis;
@@ -11,6 +12,7 @@ public class ControleDePontos : MonoBehaviour
     {
         pontos = 0;
         fonteDeAudio = GetComponent<AudioSource>();
+        pontosTexto.text = "Pontos: 0/" + qtd_total_pontos;
     }
     private void OnTriggerEnter2D(Collider2D objetoColidido)
     {
@@ -23,7 +25,12 @@ public class ControleDePontos : MonoBehaviour
     void ContarPontos()
     {
         pontos++;
-        pontosTexto.text = "Pontos: " + pontos;
+        pontosTexto.text = "Pontos: " + pontos + "/" + qtd_total_pontos;
         fonteDeAudio.PlayOneShot(somDosColetaveis);
+    }
+
+    public bool TemTodosOsPontos()
+    {
+        return pontos >= qtd_total_pontos;
     }
 }

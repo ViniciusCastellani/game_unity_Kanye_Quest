@@ -58,4 +58,9 @@ public class movimento_pulo_jogador : MonoBehaviour
             Gizmos.DrawWireSphere(detectorDeChao.position, tamanhoDetectorDeChao);
         }
     }
+
+    public bool GetEstaNoChao()
+    {
+        return estaNoChao;
+    }
 }
