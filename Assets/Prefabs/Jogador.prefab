@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 229148575515072739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: -0.78, z: 0}
+  m_LocalPosition: {x: -0.07, y: -0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -169,8 +169,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1938518917
-  m_SortingLayer: 2
-  m_SortingOrder: -3
+  m_SortingLayer: 1
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Time: 0.5
   m_PreviewTimeScale: 1
@@ -1032,6 +1032,7 @@ GameObject:
   - component: {fileID: 319305021472208535}
   - component: {fileID: 5452951244552285390}
   - component: {fileID: 7077653083579576549}
+  - component: {fileID: 269236968519563646}
   m_Layer: 6
   m_Name: Jogador
   m_TagString: Player
@@ -1047,7 +1048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7589103674406129386}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.01481, y: -5.55125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1102,8 +1103,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1938518917
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4987153581126102723, guid: 49fc05ec131e1984cbbe18cdbf43a89f, type: 3}
@@ -1156,6 +1157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movimento_jogador
   velocidade: 9
+  fonteDeAudioPassos: {fileID: 269236968519563646}
+  somDoPasso: {fileID: 8300000, guid: ad30b124575ee0c44a27c3c9ffb3b5a2, type: 3}
 --- !u!114 &169203560804806507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1178,7 @@ MonoBehaviour:
     m_Bits: 8
   estaNoChao: 0
   tamanhoDetectorDeChao: 0.4
-  somDoPulo: {fileID: 0}
+  somDoPulo: {fileID: 8300000, guid: 26d99b10f6a97af42954e55c0ad9503e, type: 3}
 --- !u!114 &132045499293282831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,9 +1206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControleDePontos
   pontos: 0
-  qtd_total_pontos: 5
+  qtd_total_pontos: 7
   pontosTexto: {fileID: 0}
+  mensagemTodosPontosColetadosTxt: {fileID: 0}
   somDosColetaveis: {fileID: 8300000, guid: 4db25faa31270eb4c98a234bab424311, type: 3}
+  somUltimoColetavel: {fileID: 8300000, guid: d9f513e230a639a4eb57e9ac36a52bf1, type: 3}
 --- !u!82 &1046700388261325664
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1318,10 +1323,10 @@ MonoBehaviour:
   telaGameOver: {fileID: 0}
   cenaMenuInicial: menu_principal
   somDoGameOver: {fileID: 8300000, guid: ab2a7a7f6beb7184d92dd0e1b236f0a3, type: 3}
-  contador_fps_txt: {fileID: 0}
   pontos_txt: {fileID: 0}
   mensagem_aviso_pontos: {fileID: 0}
-  scriptPassarFase: {fileID: 0}
+  mensagem_todos_pontos_coletados: {fileID: 0}
+  scriptPassarFase: {fileID: 7077653083579576549}
 --- !u!114 &6551030454841593899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,7 +1341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::pausar_jogo
   telaDePause: {fileID: 0}
   pontos_txt: {fileID: 0}
-  contador_fps_txt: {fileID: 0}
 --- !u!95 &5446382575195644270
 Animator:
   serializedVersion: 7
@@ -1418,7 +1422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ataque_jogador
   impulsoParaCima: 24
-  somDoAtaque: {fileID: 0}
+  somDoAtaque: {fileID: 8300000, guid: 9cb99afe689a67a46979235db021a1e6, type: 3}
 --- !u!114 &7077653083579576549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,15 +1435,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f3712132f1d6e46877ce639279f6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::passar_de_fase
-  telaStageClear: {fileID: 0}
-  nomeDaProximaFase: 
+  nomeDaProximaFase: level01
   somDoStageClear: {fileID: 8300000, guid: 38f38b6f445510c459f489c8cb8a2137, type: 3}
   pontosTxt: {fileID: 0}
-  contadorFpsTxt: {fileID: 0}
   mensagemFaltandoPontosTxt: {fileID: 0}
+  ehAUltimaFase: 1
+  telaVitoriaFinal: {fileID: 0}
+  telaStageClear: {fileID: 0}
   movimentoJogador: {fileID: 1908534585397632996}
   controleDePontos: {fileID: 6633588437562686036}
   movimentoPuloJogador: {fileID: 169203560804806507}
+--- !u!82 &269236968519563646
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589103674406129386}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7671062729641276568
 GameObject:
   m_ObjectHideFlags: 0

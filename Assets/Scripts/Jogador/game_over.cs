@@ -8,9 +8,9 @@ public class game_over : MonoBehaviour
     private AudioSource fonteDeAudio;
     public AudioClip somDoGameOver;
 
-    public GameObject contador_fps_txt;
     public GameObject pontos_txt;
     public GameObject mensagem_aviso_pontos;
+    public GameObject mensagem_todos_pontos_coletados;
 
     public passar_de_fase scriptPassarFase;
 
@@ -30,14 +30,14 @@ public class game_over : MonoBehaviour
         // liga a tela de Game Over
         telaGameOver.SetActive(true);
        
-        if (contador_fps_txt != null) 
-            contador_fps_txt.SetActive(false);
-
         if (pontos_txt != null) 
             pontos_txt.SetActive(false);
 
         if (mensagem_aviso_pontos != null)
             mensagem_aviso_pontos.SetActive(false);
+
+        if (mensagem_todos_pontos_coletados != null)
+            mensagem_todos_pontos_coletados.SetActive(false);
 
         // Congela o tempo
         Time.timeScale = 0f;

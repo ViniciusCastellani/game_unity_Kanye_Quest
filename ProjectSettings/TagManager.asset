@@ -22,7 +22,7 @@ TagManager:
   - Jogador
   - CamadaPlataforma
   - Background_2d
-  - 
+  - Fim_fase
   - 
   - 
   - 
@@ -49,11 +49,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: CamadaChao
-    uniqueID: 241608531
-    locked: 0
   - name: Jogador
     uniqueID: 2356448379
+    locked: 0
+  - name: CamadaChao
+    uniqueID: 241608531
     locked: 0
   m_RenderingLayers:
   - Default

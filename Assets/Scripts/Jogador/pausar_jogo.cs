@@ -3,8 +3,7 @@ using UnityEngine;
 public class pausar_jogo : MonoBehaviour
 {
     public GameObject telaDePause;
-    public GameObject pontos_txt;       // Arraste o texto de pontos aqui
-    public GameObject contador_fps_txt; // Arraste o texto de FPS aqui
+    public GameObject pontos_txt;     
 
     void Update()
     {
@@ -31,9 +30,6 @@ public class pausar_jogo : MonoBehaviour
         if (pontos_txt != null) 
             pontos_txt.SetActive(false);
 
-        if (contador_fps_txt != null) 
-            contador_fps_txt.SetActive(false);
-
         // paralisa o tempo
         Time.timeScale = 0f;
     }
@@ -43,9 +39,9 @@ public class pausar_jogo : MonoBehaviour
         // desativa a tela de pause
         telaDePause.SetActive(false);
 
-        // Volta a mostrar os textos de pontos e FPS na tela
-        if (pontos_txt != null) pontos_txt.SetActive(true);
-        if (contador_fps_txt != null) contador_fps_txt.SetActive(true);
+        // Volta a mostrar os textos de pontos 
+        if (pontos_txt != null) 
+            pontos_txt.SetActive(true);
 
         // volta o tempo para a velocidade normal
         Time.timeScale = 1f;

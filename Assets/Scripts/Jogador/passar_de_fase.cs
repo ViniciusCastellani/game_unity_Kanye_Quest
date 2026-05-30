@@ -3,14 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class passar_de_fase : MonoBehaviour
 {
-    public GameObject telaStageClear;
     public string nomeDaProximaFase;
     private AudioSource fonteDeAudio;
     public AudioClip somDoStageClear;
 
     public GameObject pontosTxt;
-    public GameObject contadorFpsTxt;
     public GameObject mensagemFaltandoPontosTxt;
+
+    public bool ehAUltimaFase = false;
+    public GameObject telaVitoriaFinal;
+    public GameObject telaStageClear;
 
     private Animator animatorJogador;
     public movimento_jogador movimentoJogador;
@@ -73,7 +75,19 @@ public class passar_de_fase : MonoBehaviour
         if (temporizador >= 9f)
         {
             contando = false;
-            telaStageClear.SetActive(true);
+
+            if (ehAUltimaFase)
+            {
+                if (telaVitoriaFinal != null)
+                    telaVitoriaFinal.SetActive(true);
+            }
+
+            else
+            {
+                if (telaStageClear != null)
+                    telaStageClear.SetActive(true);
+            }
+
             Time.timeScale = 0.01f;
         }
     }
@@ -114,8 +128,8 @@ public class passar_de_fase : MonoBehaviour
             rb.gravityScale = 0f;
         }
 
-        if (pontosTxt != null) pontosTxt.SetActive(false);
-        if (contadorFpsTxt != null) contadorFpsTxt.SetActive(false);
+        if (pontosTxt != null) 
+            pontosTxt.SetActive(false);
 
         if (fonteDeAudio != null)
         {

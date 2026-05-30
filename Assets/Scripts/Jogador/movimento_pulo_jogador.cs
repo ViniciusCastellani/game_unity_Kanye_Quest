@@ -39,7 +39,7 @@ public class movimento_pulo_jogador : MonoBehaviour
 
     void Pular()
     {
-        if (Input.GetButtonDown("Jump") && estaNoChao)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Jump")) && estaNoChao)
         {
             jogadorRB.linearVelocity = new Vector2(jogadorRB.linearVelocity.x, alturaDoPulo);
             if (fonteDeAudio != null && somDoPulo != null)

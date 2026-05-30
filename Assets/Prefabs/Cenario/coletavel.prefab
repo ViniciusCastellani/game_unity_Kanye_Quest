@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7348975557224071160}
   - component: {fileID: 2141745956623894440}
   - component: {fileID: 6718964195694043016}
+  - component: {fileID: 37822743021260850}
   m_Layer: 8
   m_Name: coletavel
   m_TagString: coletavel
@@ -230,3 +231,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6, y: 0.52}
   m_EdgeRadius: 0
+--- !u!95 &37822743021260850
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8284395324751452121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df22707f8fcba6c439dc07d6b6b93248, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

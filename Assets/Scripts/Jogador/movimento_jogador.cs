@@ -10,17 +10,27 @@ public class movimento_jogador : MonoBehaviour
     private Animator anim;
     private movimento_pulo_jogador scriptPulo;
 
+    public AudioSource fonteDeAudioPassos;
+    public AudioClip somDoPasso;
+
     void Start()
     {
         jogadorRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         scriptPulo = GetComponent<movimento_pulo_jogador>();
+
+        if (fonteDeAudioPassos == null)
+            fonteDeAudioPassos = GetComponent<AudioSource>();
+
+        if (fonteDeAudioPassos != null)
+            fonteDeAudioPassos.loop = false;
     }
 
     void Update()
     {
         CapturarInputs();
         AtualizarAnimacoes();
+        ControlarSomDePassos();
     }
 
     void FixedUpdate()
@@ -48,6 +58,28 @@ public class movimento_jogador : MonoBehaviour
         if (horizontal < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    void ControlarSomDePassos()
+    {
+        bool estaAndando = Mathf.Abs(horizontal) > 0.1f;
+        bool estaNoChao = scriptPulo.estaNoChao;
+
+        if (estaAndando && estaNoChao)
+        {
+            if (fonteDeAudioPassos != null && !fonteDeAudioPassos.isPlaying)
+            {
+                fonteDeAudioPassos.clip = somDoPasso;
+                fonteDeAudioPassos.Play();
+            }
+        }
+        else
+        {
+            if (fonteDeAudioPassos != null && fonteDeAudioPassos.isPlaying)
+            {
+                fonteDeAudioPassos.Stop();
+            }
         }
     }
 
